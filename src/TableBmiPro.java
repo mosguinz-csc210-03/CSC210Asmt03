@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class TableBmiPro {
 
     private static final String LINE_SEP = "^".repeat(63);
@@ -25,5 +27,19 @@ public class TableBmiPro {
      */
     private static void loop() {
         printHeader();
+
+        /* Create a Scanner object. */
+        Scanner scan = new Scanner(System.in);
+
+        /* Input prompts for height (in feet and inches, split on first whitespace) */
+        System.out.print("Enter height in feet and inches: ");
+        int heightFt = scan.nextInt();
+        int heightIn = scan.nextInt();
+
+        /* Input prompts for min and max weights. */
+        System.out.print("Enter the low weight in pounds: ");
+        double weightMin = scan.nextDouble();
+        System.out.print("Enter the high weight in pounds: ");
+        double weightMax = scan.nextDouble();
     }
 }
