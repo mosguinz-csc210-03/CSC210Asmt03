@@ -44,7 +44,7 @@ public class TableBmiPro {
 
         /* Input prompts for height (in feet and inches, split on first whitespace) */
         System.out.print("Enter height in feet and inches: ");
-        int height = scan.nextInt() * 12 scan.nextInt();
+        int height = scan.nextInt() * 12 + scan.nextInt();
 
         /* Input prompts for min and max weights. */
         System.out.print("Enter the low weight in pounds: ");
