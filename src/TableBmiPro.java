@@ -12,13 +12,12 @@ public class TableBmiPro {
     /**
      * Calculate the BMI from the given weight and height.
      *
-     * @param heightFt Floor height in feet.
-     * @param heightIn Floor height in inches.
      * @param weight Weight in pounds.
-     * @return The BMI value (lbs/in^2)
+     * @param height Height in inches.
+     * @return The BMI value (lbs/in^2).
      */
-    private static double calculateBMI(double heightFt, double heightIn, double weight) {
-        return 703 * weight / Math.pow(heightFt * 12 + heightIn, 2);
+    private static double calculateBMI(double weight, double height) {
+        return 703 * weight / (height * height);
     }
 
     /**
@@ -45,8 +44,7 @@ public class TableBmiPro {
 
         /* Input prompts for height (in feet and inches, split on first whitespace) */
         System.out.print("Enter height in feet and inches: ");
-        int heightFt = scan.nextInt();
-        int heightIn = scan.nextInt();
+        int height = scan.nextInt() * 12 scan.nextInt();
 
         /* Input prompts for min and max weights. */
         System.out.print("Enter the low weight in pounds: ");
