@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TableBmiPro {
+public class TableBmi {
 
     private static final String LINE_SEP = "^".repeat(63);
 
