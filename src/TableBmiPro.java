@@ -66,6 +66,10 @@ public class TableBmiPro {
         System.out.print("Enter the high weight in pounds: ");
         double weightMax = scan.nextDouble();
 
+        /* Display the table and print termination message. */
         displayTable(height, weightMax, weightMin);
+        System.out.println('\n' + LINE_SEP);
+        System.out.println("^    Thank you for using my program.");
+        System.out.println(LINE_SEP);
     }
 }
