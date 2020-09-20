@@ -10,6 +10,18 @@ public class TableBmiPro {
     }
 
     /**
+     * Calculate the BMI from the given weight and height.
+     *
+     * @param heightFt Floor height in feet.
+     * @param heightIn Floor height in inches.
+     * @param weight Weight in pounds.
+     * @return The BMI value (lbs/in^2)
+     */
+    private static double calculateBMI(double heightFt, double heightIn, double weight) {
+        return 703 * weight / Math.pow(heightFt * 12 + heightIn, 2);
+    }
+
+    /**
      * Print the program header.
      * Made to be identical to the example, as required by part (1)(5).
      */
