@@ -9,6 +9,20 @@ public class TableBmiPro {
         loop();
     }
 
+    private static void displayTable(double height, double weightMax, double weightMin) {
+        /* Print table header. */
+        System.out.println("\nWEIGHT\t BMI\t\t CONDITION");
+
+        /* Generate and print BMI table. */
+        double bmi;
+        String cond;
+        for (; weightMin <= weightMax; weightMin += 5) {
+            bmi = calculateBMI(weightMin, height);
+            cond = bmi > 25 ? "overweight" : "not overweight";
+            System.out.printf("%.0f\t\t %3.4f\t %s%n", weightMin, bmi, cond);
+        }
+    }
+
     /**
      * Calculate the BMI from the given weight and height.
      *
@@ -51,5 +65,7 @@ public class TableBmiPro {
         double weightMin = scan.nextDouble();
         System.out.print("Enter the high weight in pounds: ");
         double weightMax = scan.nextDouble();
+
+        displayTable(height, weightMax, weightMin);
     }
 }
