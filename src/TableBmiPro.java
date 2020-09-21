@@ -1,6 +1,6 @@
 /*
  * Assignment 03
- * Description: BMI Code Reuse
+ * Description: [Part 2 of 3] BMI Code Reuse
  * Name: Kullathon "Mos" Sitthisarnwattanachai
  * Teammate: Amber Hartigan
  * ID: 921425216
