@@ -50,7 +50,7 @@ public class TableBmi {
     /**
      * Run the program loop.
      */
-    private static void loop() {
+    public static void loop() {
         printHeader();
 
         /* Create a Scanner object. */
