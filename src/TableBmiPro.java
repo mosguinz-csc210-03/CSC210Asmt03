@@ -16,22 +16,33 @@ public class TableBmiPro {
  */
 class _TableBmi {
 
+    /* 63-column wide separator in compliance with (3)(a). */
     private static final String LINE_SEP = "^".repeat(63);
 
     public static void main(String[] args) {
         loop();
     }
 
+    /**
+     * Display the BMI table from the given parameters.
+     *
+     * @param height The height in inches.
+     * @param weightMax The maximum weight in pounds.
+     * @param weightMin THe minimum weight in pounds.
+     */
     private static void displayTable(double height, double weightMax, double weightMin) {
         /* Print table header. */
         System.out.println("\nWEIGHT\t BMI\t\t CONDITION");
 
-        /* Generate and print BMI table. */
+        /* Generate and print BMI table in increments of 5 lbs.*/
         double bmi;
         String cond;
         for (; weightMin <= weightMax; weightMin += 5) {
+            /* Calculate the BMI. */
             bmi = calculateBMI(weightMin, height);
+            /* Determine if the BMI is considered "overweight". */
             cond = bmi > 25 ? "overweight" : "not overweight";
+            /* Print the table row. */
             System.out.printf("%.0f\t\t %3.4f\t %s%n", weightMin, bmi, cond);
         }
     }
@@ -86,6 +97,7 @@ class _TableBmi {
         System.out.println(LINE_SEP);
     }
 }
+
 
 /**
  * From part 1 of 3 of assessment 01.
