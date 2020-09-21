@@ -1,3 +1,13 @@
+/*
+ * Assignment 03
+ * Description: [Part 1 of 3] BMI History Pro
+ * Name: Kullathon "Mos" Sitthisarnwattanachai
+ * Teammate: Amber Hartigan
+ * ID: 921425216
+ * Class: CSC 210-03
+ * Semester: Fall 2020
+ */
+
 import java.util.Scanner;
 
 public class TableBmi {
