@@ -28,6 +28,8 @@ public class InterestCalculator {
         double interestRate = scan.nextDouble() / 100;
         System.out.print("Enter your deposit term (in years): ");
         double depositTerm = scan.nextDouble();
+
+        displayReport(principalSum, compoundFreq, interestRate, depositTerm);
     }
 
     /**
@@ -42,10 +44,19 @@ public class InterestCalculator {
                                       double compoundFreq,
                                       double interestRate,
                                       double depositTerm) {
-        double reportFrequency = depositTerm <= 2 ? 0.25 : depositTerm;
+        /*
+         Show a quarterly report if either: the compounding frequency is less than 2 p.a.
+         or the deposit term is less than one year. Otherwise, show a yearly report.
+        */
+        double reportFrequency = Math.min(compoundFreq, depositTerm) <= 2 ? 0.25 : 1;
 
-        for (int i = 0; i <= depositTerm; i += reportFrequency) {
-            ;
+        double newSum, prevAccumInterest = 0, currentInterest, accumInterest;
+        for (double length = 0; length <= depositTerm; length += reportFrequency) {
+            newSum = calculateNewPrincipal(principalSum, compoundFreq, interestRate, length);
+            accumInterest = newSum - principalSum;
+            currentInterest = accumInterest - prevAccumInterest;
+            System.out.printf("%,.2f\t%,.2f\t%,.2f\t%,.2f%n", length, currentInterest, accumInterest, newSum);
+            prevAccumInterest = accumInterest;
         }
     }
 
