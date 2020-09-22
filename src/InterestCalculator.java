@@ -15,6 +15,9 @@ public class InterestCalculator {
         loop();
     }
 
+    /**
+     * Run the program loop.
+     */
     public static void loop() {
         printHeader();
 
@@ -40,6 +43,19 @@ public class InterestCalculator {
         System.out.println("============================");
     }
 
+    /**
+     * Display the compound interest report from the given parameters.
+     * <p>
+     * Shows the interest generated per period, cumulative interests, and the new principal balance for each report
+     * frequency.
+     * <p>
+     * The report frequency is quarterly for deposit terms of 2 years and under. Yearly for all others.
+     *
+     * @param principalSum The original principal sum, also the "original deposit amount"
+     * @param compoundFreq The compounding frequency (in a year)
+     * @param interestRate The nominal annual interest rate
+     * @param depositTerm  The length of time the interest is applied, also "deposit term"
+     */
     private static void displayReport(double principalSum,
                                       double compoundFreq,
                                       double interestRate,
@@ -71,6 +87,17 @@ public class InterestCalculator {
         System.out.printf("%23s: $ %,10.2f%n", "Final principal balance", finalSum);
     }
 
+    /**
+     * Calculate the new principal amount after a certain period.
+     * <p>
+     * Derived from: https://en.wikipedia.org/wiki/Compound_interest#Periodic_compounding
+     *
+     * @param principalSum     The original principal sum, also the "original deposit amount"
+     * @param compoundFreq     The compounding frequency (in a year)
+     * @param interestRate     The nominal annual interest rate
+     * @param timeSinceDeposit The length of time since the initial deposit
+     * @return The new principal balance at the given period.
+     */
     private static double calculateNewPrincipal(double principalSum,
                                                 double compoundFreq,
                                                 double interestRate,
