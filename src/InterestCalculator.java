@@ -44,11 +44,8 @@ public class InterestCalculator {
                                       double compoundFreq,
                                       double interestRate,
                                       double depositTerm) {
-        /*
-         Show a quarterly report if either: the compounding frequency is less than 2 p.a.
-         or the deposit term is less than one year. Otherwise, show a yearly report.
-        */
-        double reportFrequency = Math.min(compoundFreq, depositTerm) <= 2 ? 0.25 : 1;
+        /* Show a quarterly report if the deposit term is 2 years or less. */
+        double reportFrequency = depositTerm <= 2 ? 0.25 : 1;
 
         double newSum, prevAccumInterest = 0, currentInterest, accumInterest;
         for (double length = 0; length <= depositTerm; length += reportFrequency) {
