@@ -8,6 +8,8 @@
  * Semester: Fall 2020
  */
 
+import java.util.Scanner;
+
 public class InterestCalculator {
     public static void main(String[] args) {
         loop();
@@ -15,6 +17,17 @@ public class InterestCalculator {
 
     public static void loop() {
         printHeader();
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter your principal deposit amount (in $): ");
+        double principalSum = scan.nextDouble();
+        System.out.print("Enter your compounding frequency (per annum): ");
+        double compoundFreq = scan.nextDouble();
+        System.out.print("Enter your compound annual interest rate (in %): ");
+        double interestRate = scan.nextDouble() / 100;
+        System.out.print("Enter your deposit term (in years): ");
+        double depositTerm = scan.nextDouble();
     }
 
     /**
