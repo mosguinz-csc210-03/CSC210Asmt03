@@ -37,4 +37,22 @@ public class InterestCalculator {
         System.out.println("COMPOUND INTEREST CALCULATOR");
         System.out.println("============================");
     }
+
+    private static void displayReport(double principalSum,
+                                      double compoundFreq,
+                                      double interestRate,
+                                      double depositTerm) {
+        double reportFrequency = depositTerm <= 2 ? 0.25 : depositTerm;
+
+        for (int i = 0; i <= depositTerm; i += reportFrequency) {
+            ;
+        }
+    }
+
+    private static double calculateNewPrincipal(double principalSum,
+                                                double compoundFreq,
+                                                double interestRate,
+                                                double timeSinceDeposit) {
+        return principalSum * Math.pow(1 + (interestRate / compoundFreq), compoundFreq * timeSinceDeposit);
+    }
 }
