@@ -52,7 +52,7 @@ public class InterestCalculator {
             newSum = calculateNewPrincipal(principalSum, compoundFreq, interestRate, length);
             accumInterest = newSum - principalSum;
             currentInterest = accumInterest - prevAccumInterest;
-            System.out.printf("%,.2f\t%,.2f\t%,.2f\t%,.2f%n", length, currentInterest, accumInterest, newSum);
+            System.out.printf("%,5.2f yr\t$ %,10.2f\t$ %,10.2f\t$ %,10.2f%n", length, currentInterest, accumInterest, newSum);
             prevAccumInterest = accumInterest;
         }
     }
