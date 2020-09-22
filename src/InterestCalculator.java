@@ -63,6 +63,12 @@ public class InterestCalculator {
             System.out.printf("%,5.2f yr │ $ %,10.2f │ $ %,10.2f │ $ %,10.2f%n", length, currentInterest, accumInterest, newSum);
             prevAccumInterest = accumInterest;
         }
+
+        double finalSum = calculateNewPrincipal(principalSum, compoundFreq, interestRate, depositTerm);
+        System.out.println("=".repeat(56));
+        System.out.printf("%23s: $ %,10.2f%n", "Original principal sum", principalSum);
+        System.out.printf("%23s: $ %,10.2f%n", "Interest generated", finalSum - principalSum);
+        System.out.printf("%23s: $ %,10.2f%n", "Final principal balance", finalSum);
     }
 
     private static double calculateNewPrincipal(double principalSum,
