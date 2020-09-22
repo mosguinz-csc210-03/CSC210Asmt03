@@ -44,15 +44,23 @@ public class InterestCalculator {
                                       double compoundFreq,
                                       double interestRate,
                                       double depositTerm) {
+
         /* Show a quarterly report if the deposit term is 2 years or less. */
         double reportFrequency = depositTerm <= 2 ? 0.25 : 1;
-
+        System.out.println("\n" + "=".repeat(56));
+        System.out.printf("Your %s compound interest report:%n", reportFrequency == 1 ? "yearly" : "quarterly");
+        System.out.printf("Principal sum of $%.2f with a %.2f-year deposit term%n", principalSum, depositTerm);
+        System.out.printf("compounding %.0f time(s) per year at %.2f%% p.a.%n", compoundFreq, interestRate * 100);
+        System.out.println("=".repeat(56));
+        System.out.printf(" %7s │ %12s │ %12s │ %12s%n", "Deposit", "Interest", "Cumulative", "New");
+        System.out.printf(" %7s │ %12s │ %12s │ %12s%n", "length", "at period", "interest", "principal");
+        System.out.println("-".repeat(56));
         double newSum, prevAccumInterest = 0, currentInterest, accumInterest;
         for (double length = 0; length <= depositTerm; length += reportFrequency) {
             newSum = calculateNewPrincipal(principalSum, compoundFreq, interestRate, length);
             accumInterest = newSum - principalSum;
             currentInterest = accumInterest - prevAccumInterest;
-            System.out.printf("%,5.2f yr\t$ %,10.2f\t$ %,10.2f\t$ %,10.2f%n", length, currentInterest, accumInterest, newSum);
+            System.out.printf("%,5.2f yr │ $ %,10.2f │ $ %,10.2f │ $ %,10.2f%n", length, currentInterest, accumInterest, newSum);
             prevAccumInterest = accumInterest;
         }
     }
